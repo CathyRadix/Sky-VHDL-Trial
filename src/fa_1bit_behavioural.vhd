@@ -24,12 +24,14 @@ architecture Behavioral of tt/_um_1bbCR is
 signal tmp: std_logic_vector(1 downto 0);
  
 begin  
-   process(X1,X2,Cin)
+   process(ui_in)
    begin 
- 	tmp <= ('0' & X1) + ('0' & X2) +('0' & Cin) ;
+ 	tmp <= ('0' & ui_in(1)) + ('0' & ui_in(2)) +('0' & ui_in(0)) ;
    end process;
 
-   S <= tmp(0);
-   Cout <= tmp(1);
-
+   uo_out(0) <= tmp(0);
+   uo_out(1) <= tmp(1);
+    uo_out (7 downto 2) <= "000000";
+    uio_out <= "00000000";
+    uio_oe <= "00000000";
 end Behavioral; 
