@@ -6,14 +6,20 @@ use ieee.std_logic_1164.all;
 use IEEE.STD_LOGIC_unsigned.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity fa_1bit_behavioural is  
+entity tt_um_1bbCR is  
 port( 
-  X1, X2, Cin : in std_logic;  
-  S, Cout : out std_logic
+        ui_in   : in  std_logic_vector(7 downto 0);
+        uo_out  : out std_logic_vector(7 downto 0);
+        uio_in  : in  std_logic_vector(7 downto 0);
+        uio_out : out std_logic_vector(7 downto 0);
+        uio_oe  : out std_logic_vector(7 downto 0);
+        ena     : in  std_logic;
+        clk     : in  std_logic;
+        rst_n   : in  std_logic 
 );  
-end entity fa_1bit_behavioural;  
+end entity tt_um_1bbCR;  
 
-architecture Behavioral of fa_1bit_behavioural is   
+architecture Behavioral of tt/_um_1bbCR is   
  
 signal tmp: std_logic_vector(1 downto 0);
  
